@@ -7,7 +7,7 @@ const productRoutes = require('./routes/productRoutes');
 const bodyParser=require('body-parser')
 
 
-const PORT=4000;
+const PORT=process.env.PORT||4000;
 
 const app=express();
 dotEnv.config();
@@ -30,6 +30,6 @@ app.listen(PORT,()=>{
     console.log(`running port ${PORT}`);
 })
 
-app.use('/home', (req,res)=>{
+app.use('/', (req,res)=>{
     res.send("homeeeeeeeeeeee");
 })
